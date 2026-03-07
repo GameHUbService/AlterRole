@@ -9,7 +9,7 @@
     
     <style>
         /* =========================================
-           VARIABLES DE COLOR (Look and Feel Neón)
+            VARIABLES DE COLOR (Look and Feel Neón)
         ========================================= */
         :root {
             --bg-deep: #0a0510;
@@ -39,7 +39,7 @@
         }
 
         /* =========================================
-           PANTALLA DE LOGIN
+            PANTALLA DE LOGIN
         ========================================= */
         #login-screen {
             position: fixed;
@@ -65,7 +65,7 @@
             text-align: center; backdrop-filter: blur(10px);
         }
 
-        .login-box h1 { font-weight: 900; font-size: 2.5rem; margin-bottom: 2rem; letter-spacing: 2px; }
+        .login-box h1 { font-weight: 900; font-size: 2.5rem; margin-bottom: 2rem; letter-spacing: 2px; text-transform: uppercase; }
         .login-box h1 span { color: #f72585; }
         .input-group { margin-bottom: 1.5rem; text-align: left; }
         .input-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
@@ -82,10 +82,10 @@
         .btn-login:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(114, 9, 183, 0.5); }
 
         /* =========================================
-           PANTALLA INTERMEDIA: ELIGE TU ROL
+            PANTALLA INTERMEDIA: ELIGE TU ROL
         ========================================= */
         #role-selection-screen {
-            display: none; /* Se activa con JS */
+            display: none; 
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
             background: linear-gradient(135deg, #0a0510 0%, #160b24 100%);
             z-index: 900; flex-direction: column; justify-content: center; align-items: center;
@@ -110,7 +110,6 @@
             flex: 0 0 220px; height: 350px; border-radius: 15px; position: relative;
             cursor: pointer; overflow: hidden; border: 2px solid rgba(255,255,255,0.05);
             box-shadow: 0 10px 30px rgba(0,0,0,0.8); transition: 0.4s;
-            /* Animación de entrada de derecha a izquierda */
             opacity: 0; transform: translateX(100vw);
             animation: slideInRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
@@ -120,7 +119,7 @@
         }
 
         .role-card:hover {
-            transform: scale(1.05) translateY(-10px) !important; /* El !important vence a la animación terminada */
+            transform: scale(1.05) translateY(-10px) !important;
             border-color: var(--accent-purple); box-shadow: 0 15px 40px rgba(131, 56, 236, 0.6); z-index: 10;
         }
 
@@ -134,7 +133,7 @@
         }
 
         /* =========================================
-           LAYOUT PRINCIPAL DE LA APP
+            LAYOUT PRINCIPAL DE LA APP
         ========================================= */
         #app-layout { display: none; min-height: 100vh; animation: fadeIn 1s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -145,7 +144,7 @@
             background: var(--bg-panel); border-right: 1px solid rgba(255,255,255,0.05);
             padding: 2rem 1.5rem; display: flex; flex-direction: column; z-index: 100;
         }
-        .logo-app { font-size: 1.8rem; font-weight: 900; margin-bottom: 3rem; letter-spacing: 1px; text-align: center; }
+        .logo-app { font-size: 1.8rem; font-weight: 900; margin-bottom: 3rem; letter-spacing: 1px; text-align: center; text-transform: uppercase; }
         .logo-app span { color: #f72585; }
         .nav-item {
             display: flex; align-items: center; padding: 12px 15px; color: var(--text-muted);
@@ -161,7 +160,7 @@
         .section-view.active { display: block; animation: fadeUp 0.5s ease; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- BANNERS DE MINI-LANDINGS --- */
+        /* --- BANNERS --- */
         .hero-banner {
             position: relative; height: 350px; display: flex; align-items: center;
             padding: 3rem; background-size: cover; background-position: center; border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -178,7 +177,7 @@
         .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
 
         /* =========================================
-           TARJETAS BÁSICAS Y DE VIDEO
+            TARJETAS
         ========================================= */
         .card { height: 280px; border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .card::after { content: '\f144'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255, 255, 255, 0.7); opacity: 0; transition: 0.3s; z-index: 5; }
@@ -189,9 +188,6 @@
         .card-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px 15px; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%); z-index: 2; }
         .card-badge { position: absolute; top: 10px; right: 10px; background: var(--accent-teal); color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; z-index: 2; }
 
-        /* =========================================
-           TARJETAS INTERACTIVAS (Market, Games, etc)
-        ========================================= */
         .card-interactive { height: 340px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.5); transition: 0.3s; background: #000; }
         .card-interactive:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(131, 56, 236, 0.5); }
         .card-interactive img { width: 100%; height: 55%; object-fit: cover; transition: 0.5s; }
@@ -205,7 +201,7 @@
         .btn-action:hover { background: var(--accent-teal); box-shadow: 0 0 15px rgba(0, 180, 216, 0.4); }
 
         /* =========================================
-           MODAL REPRODUCTOR DE VIDEO
+            MODAL REPRODUCTOR
         ========================================= */
         #video-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.95); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(10px); opacity: 0; transition: opacity 0.3s ease; }
         #video-modal.show { display: flex; opacity: 1; }
@@ -219,7 +215,7 @@
 
     <div id="login-screen">
         <div class="login-box">
-            <h1>AR <span>ALTER</span></h1>
+            <h1>ALTER <span>ROLE</span></h1>
             <p style="color: var(--text-muted); margin-bottom: 2rem;">No miras el fandom. Lo vives.</p>
             <div class="input-group">
                 <label>Usuario (Cédula)</label>
@@ -292,7 +288,7 @@
 
     <div id="app-layout">
         <aside class="sidebar">
-            <div class="logo-app">AR <span>ALTER</span></div>
+            <div class="logo-app">ALTER <span>ROLE</span></div>
             <div class="nav-item active" onclick="cambiarVista('fandom-hub', this)"><i class="fa-solid fa-house"></i> Fandom Hub</div>
             <div class="nav-item" onclick="cambiarVista('universos', this)"><i class="fa-solid fa-globe"></i> Universos</div>
             <div class="nav-item" onclick="cambiarVista('makeup', this)"><i class="fa-solid fa-wand-magic-sparkles"></i> Makeup Role</div>
@@ -431,7 +427,6 @@
     </div>
 
     <script>
-        // 1. Iniciar Selección de Rol
         function iniciarSeleccionRol() {
             const cedula = document.getElementById('cedula').value;
             const nombre = document.getElementById('nombre').value;
@@ -440,7 +435,6 @@
                 alert("Por favor, llena tu cédula y nombre para vivir la experiencia.");
                 return;
             }
-            // Oculta login y muestra el selector de rol (flex para centrar)
             document.getElementById('login-screen').style.opacity = '0';
             setTimeout(() => {
                 document.getElementById('login-screen').style.display = 'none';
@@ -448,17 +442,12 @@
             }, 500);
         }
 
-        // 2. Entrar a la App Principal tras elegir rol
         function entrarApp(rol) {
-            console.log("Rol seleccionado:", rol); // Aquí podrías guardar el rol en LocalStorage
-            
-            // Oculta selector de rol
+            console.log("Rol seleccionado:", rol);
             document.getElementById('role-selection-screen').style.display = 'none';
-            // Revela la app
             document.getElementById('app-layout').style.display = 'flex';
         }
 
-        // 3. Navegación del Sidebar
         function cambiarVista(idVista, elementoMenu) {
             const vistas = document.querySelectorAll('.section-view');
             vistas.forEach(vista => vista.classList.remove('active'));
@@ -469,7 +458,6 @@
             window.scrollTo(0, 0);
         }
 
-        // 4. Lógica del Reproductor Modal
         const modal = document.getElementById('video-modal');
         const videoPlayer = document.getElementById('player');
 
